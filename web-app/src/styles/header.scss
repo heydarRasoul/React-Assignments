@@ -1,0 +1,20 @@
+.head-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+
+  h4 {
+    color: rgb(224, 238, 245);
+    padding: 5px;
+    border: 2px solid rgb(224, 238, 245);
+    border-radius: 5px;
+  }
+  a {
+    color: rgb(224, 238, 245);
+    padding: 5px;
+    border: 2px solid rgb(224, 238, 245);
+    text-decoration: none;
+    border-radius: 5px;
+  }
+}

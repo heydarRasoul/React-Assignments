@@ -1,0 +1,53 @@
+html,
+body {
+  background-color: rgb(31, 31, 86);
+}
+.portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 550px;
+  height: 300px;
+  background-color: rgb(224, 238, 245);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 30px 30%;
+  border-radius: 10px;
+
+  .img-name-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 24px 10px 24px;
+
+    img {
+      border-radius: 100px;
+      border: 2px solid rgb(139, 150, 156);
+    }
+
+    .name-wrapper {
+      border: 2px solid rgb(139, 150, 156);
+      width: 250px;
+      height: 90px;
+      border-radius: 5px;
+
+      h3 {
+        font-size: 17px;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .description {
+    height: 100px;
+    width: 500px;
+    margin: 0 24px;
+    border: 2px solid rgb(139, 150, 156);
+    border-radius: 5px;
+
+    p {
+      padding: 0 20px;
+      font-size: 16px;
+    }
+  }
+}
