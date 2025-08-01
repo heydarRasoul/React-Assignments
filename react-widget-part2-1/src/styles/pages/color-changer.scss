@@ -2,15 +2,20 @@
 
 .color-wraapper {
   @include center-flex-column;
-  h1 {
+
+  h1,
+  h2 {
     color: purple;
-    color: pink;
   }
 
   .input-box {
     width: 200px;
     height: 40px;
     border-radius: 10px;
+  }
+  p {
+    width: 50%;
+    font-size: 20px;
   }
 
   .update-button {

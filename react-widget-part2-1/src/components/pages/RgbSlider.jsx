@@ -56,6 +56,50 @@ export default function RgbSlider() {
           onChange={handleBlue}
         ></input>
       </div>
+
+      <h1>RgbSlider Widget Description</h1>
+      <p>
+        The RgbSlider widget provides an interactive interface with three
+        sliders, each controlling the intensity of the Red, Green, and Blue
+        channels of a color. As the sliders are adjusted, a display box updates
+        its background color in real time, reflecting the combined RGB value.
+      </p>
+      <h2>Purpose:</h2>
+      <div>
+        <ul>
+          <li>
+            To allow users to explore and create colors by mixing red, green,
+            and blue values.
+          </li>
+          <li>
+            To demonstrate real-time state updates and dynamic inline styling in
+            React.
+          </li>
+          <li>
+            To visually teach how RGB color values combine to form different
+            colors.
+          </li>
+        </ul>
+      </div>
+      <h2>Instructions for Use:</h2>
+      <div>
+        <ul>
+          <li>
+            Adjust Sliders: Use the three sliders labeled R, G, and B to adjust
+            the intensity of the Red, Green, and Blue color components
+            respectively. Each slider ranges from 0 to 255.
+          </li>
+          <li>
+            Observe Color Change: The color box above the sliders updates
+            instantly to display the color corresponding to the current RGB
+            values.
+          </li>
+          <li>
+            Read RGB Values: The numeric value next to each slider shows the
+            current intensity of that color channel.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

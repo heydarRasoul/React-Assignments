@@ -2,7 +2,8 @@
 
 .rgb-wrapper {
   @include center-flex-column;
-  h1 {
+  h1,
+  h2 {
     color: purple;
   }
 
@@ -12,6 +13,11 @@
     height: 40px;
     border-radius: 10px;
     margin-bottom: 10px;
+  }
+
+  p {
+    width: 50%;
+    font-size: 20px;
   }
 
   .color-adjuster {
