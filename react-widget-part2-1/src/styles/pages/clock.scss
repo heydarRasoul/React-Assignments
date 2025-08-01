@@ -1,0 +1,16 @@
+@use "./common.scss" as *;
+
+.clock-wrapper {
+  @include center-flex-column;
+  h1 {
+    color: purple;
+  }
+  .clock {
+    font-size: 40px;
+    color: brown;
+  }
+
+  .toggle-button {
+    @include button-style;
+  }
+}

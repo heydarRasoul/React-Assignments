@@ -1,0 +1,25 @@
+@use "./common.scss" as *;
+
+.align-wrapper {
+  @include center-flex-column;
+
+  .text-erapper {
+    width: 80%;
+  }
+
+  .color-box-wrapper {
+    border: 1px solid black;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .color-adjuster {
+    margin: 10px 0;
+  }
+
+  .align-button {
+    @include button-style;
+  }
+}

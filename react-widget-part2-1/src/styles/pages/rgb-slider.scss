@@ -1,0 +1,24 @@
+@use "./common.scss" as *;
+
+.rgb-wrapper {
+  @include center-flex-column;
+  h1 {
+    color: purple;
+  }
+
+  .color-box-wrapper {
+    border: 1px solid black;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .color-adjuster {
+    margin: 10px 0;
+  }
+
+  .size-changer {
+    @include button-style;
+  }
+}

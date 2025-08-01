@@ -1,0 +1,19 @@
+@use "./common.scss" as *;
+
+.color-wraapper {
+  @include center-flex-column;
+  h1 {
+    color: purple;
+    color: pink;
+  }
+
+  .input-box {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .update-button {
+    @include button-style;
+  }
+}
