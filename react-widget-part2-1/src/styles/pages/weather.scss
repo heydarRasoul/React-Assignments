@@ -1,0 +1,15 @@
+@use "./common.scss" as *;
+
+.weather-wraapper {
+  @include center-flex-column;
+
+  h1,
+  h2 {
+    color: purple;
+  }
+
+  p {
+    width: 50%;
+    font-size: 20px;
+  }
+}

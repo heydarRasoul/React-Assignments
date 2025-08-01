@@ -17,7 +17,7 @@ export default function Routing() {
       <Route path="/rgbSlider" component={RgbSlider} />
       <Route path="/colorChanger" component={ColorChanger} />
       <Route path="/home" component={Home} />
-      {/* <Route path="/weather" component={Weather} /> */}
+      <Route path="/weather" component={Weather} />
       <Redirect exact from="/" to="/home" />
     </Switch>
   );

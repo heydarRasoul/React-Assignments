@@ -1,58 +1,56 @@
-// import { useEffect, useState } from "react";
-
-// export default function Weather() {
-//   const [temp, setTemp] = useState(null);
-//   useEffect(() => {
-//     fetch("https://www.metaweather.com/api/location/search/?query=London")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setTemp(data.main.temp);
-//         console.log("Weather data:", data);
-//       })
-//       .catch((err) => console.error("Fetch error:", err));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Weather in Utah</h1>
-//       {temp !== null ? <h2>Temperature: {temp}°C</h2> : <p>Loading...</p>}
-//     </div>
-//   );
-// }
 import { useEffect, useState } from "react";
 
-export default function Weather({ location = "New York" }) {
-  const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(true);
+export default function Weather() {
+  const [temp, setTemp] = useState(null);
 
   useEffect(() => {
-    const apiKey = "YOUR_API_KEY"; // replace with your actual key
-    const url = `https://api.tomorrow.io/v4/weather/realtime?location=${encodeURIComponent(
-      location
-    )}&apikey=${apiKey}`;
-
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) throw new Error(res.statusText);
-        return res.json();
-      })
+    fetch("https://api.weather.gov/points/40.31,-111.71")
+      .then((res) => res.json())
       .then((data) => {
-        setWeather(data.data.values);
+        const forecastUrl = data.properties.forecast;
+        return fetch(forecastUrl);
       })
-      .catch((err) => console.error("API error:", err))
-      .finally(() => setLoading(false));
-  }, [location]);
-
-  if (loading) return <p>Loading weather…</p>;
-  if (!weather) return <p>Could not retrieve weather.</p>;
+      .then((res) => res.json())
+      .then((forecastData) => {
+        const temperature = forecastData.properties.periods[0].temperature;
+        setTemp(temperature);
+      })
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
 
   return (
-    <div>
-      <h3>Current Weather in {location}</h3>
-      <p>🌡 Temperature: {weather.temperature} °C</p>
-      <p>💧 Humidity: {weather.humidity} %</p>
-      <p>💨 Wind: {weather.windSpeed} m/s</p>
-      <p>☁ Cloud Cover: {weather.cloudCover} %</p>
+    <div className="weather-wraapper">
+      <div>
+        <h1>Weather in Utah</h1>
+        {temp !== null ? <h2>Temperature: {temp}°F</h2> : <p>Loading...</p>}
+      </div>
+
+      <h1>Weather Widget Description</h1>
+      <p>
+        The Weather widget is a simple interface that fetches and displays the
+        current temperature for a specific location using the National Weather
+        Service API. It shows real-time weather data based on preset geographic
+        coordinates.
+      </p>
+      <h2>Purpose:</h2>
+      <div>
+        <ul>
+          <li>Provide real-time temperature updates for a specific location</li>
+          <li>Deliver weather information quickly and clearly</li>
+          <li>Offer a simple, user-friendly display without extra clutter</li>
+        </ul>
+      </div>
+      <h2>Instructions for Use:</h2>
+      <div>
+        <ul>
+          <li>
+            Fetches current temperature data from the National Weather Service
+            API
+          </li>
+          <li>Displays temperature in Fahrenheit</li>
+          <li>Shows a loading message while fetching data</li>
+        </ul>
+      </div>
     </div>
   );
 }

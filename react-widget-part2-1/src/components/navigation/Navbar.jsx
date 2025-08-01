@@ -28,7 +28,9 @@ export default function Navbar() {
       <NavLink className="nav-link" to="/colorChanger">
         Color Changer
       </NavLink>
-      {/* <NavLink to="/weather">Weather</NavLink> */}
+      <NavLink className="nav-link" to="/weather">
+        Weather
+      </NavLink>
     </div>
   );
 }

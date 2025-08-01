@@ -22,7 +22,7 @@ export default function ColorChanger() {
       <button className="update-button" onClick={updateColor}>
         Update
       </button>
-      <h1>Clock Widget Description</h1>
+      <h1>Color changing Widget Description</h1>
       <p>
         The ColorChanger widget allows users to input a color name or color code
         and dynamically changes the heading text color to the entered value. The
